@@ -1,0 +1,44 @@
+version: '3'
+services:
+  db:
+    container_name: db
+    image: mongo:3.6
+    restart: always
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - "27666:27017"
+
+  mq:
+    container_name: mq
+    image: garyascuy/rabbitmq:flash
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
+    volumes:
+      - ./data/mq:/var/lib/rabbitmq
+    ports:
+      - "5666:5672"
+      - "15675:15675"
+      - "15666:15672"
+      - "7666:1883"
+
+  backend:
+    container_name: backend
+    image: garyascuy/erebus:1.11.0-offline-backend
+    restart: always
+    depends_on:
+      - db
+      - mq
+    ports:
+      - "3666:3666"
+
+  frontend:
+    container_name: frontend
+    image: garyascuy/erebus:1.20.0-offline-demo
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "80:3666"
