@@ -1,0 +1,49 @@
+{
+  "app": {
+    "name": "Erebus",
+    "version": "1.0.0"
+  },
+  "pages": {
+    "login": {
+      "button": "Sign-In with OpenID"
+    },
+    "me": {
+      "menu": "Me",
+      "generalSettings": "General Settings",
+      "systemInformation": "System Information",
+      "about": "About",
+      "fields": {
+        "language": "Language",
+        "appName": "Application Name",
+        "buildVersion": "Build Version",
+        "author": "Author",
+        "year": "Year"
+      }
+    },
+    "robots": {
+      "menu": "Robots"
+    },
+    "types": {
+      "menu": "Types"
+    },
+    "exit": {
+      "menu": "Exit"
+    },
+    "gamepad": {
+      "main": "QUICK TRAINING",
+      "description": "Let's Start with training",
+      "buttonX": "Button X",
+      "buttonY": "Button Y",
+      "buttonA": "Button A",
+      "buttonB": "Button B",
+      "axis": "AXIS CONTROL",
+      "extra": "EXTRA BUTTONS"
+    },
+    "about": {
+      "menu": "About",
+      "title": "Erebus - Greek Mythology",
+      "content": "Erebus was one of the primordial deities in Greek mythology, born out of the primeval void, Chaos. It was the personification of the deep darkness and shadows. Erebus was the brother of Gaea (earth), Tartarus (underworld), Eros (love), and Nyx (night). From the union of Erebus and Nyx, various children were produced, including Aether, Hemera (day), Hypnos (sleep), the Moirai (the Fates), Geras (old age) and Thanatos (death). The word Erebus was also used to indicate a region of the Underworld where the dead would go immediately after dying.",
+      "footer": "2018"
+    }
+  }
+}
