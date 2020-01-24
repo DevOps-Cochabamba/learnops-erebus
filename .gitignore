@@ -17,3 +17,7 @@ services/client/src/styles/*.css.map
 services/client/src/styles/*.css
 services/client/src/styles/pages/*.css.map
 services/client/src/styles/pages/*.css
+
+# Packages
+packages/protocols/node_modules/
+packages/sdk/node_modules/
