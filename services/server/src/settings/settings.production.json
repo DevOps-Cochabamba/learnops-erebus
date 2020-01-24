@@ -1,0 +1,28 @@
+{
+  "service": {
+    "host": "0.0.0.0",
+    "port": "3666"
+  },
+  "mongoose": {
+    "url": "mongodb://db:27017/erebus",
+    "options": {
+      "useNewUrlParser": true
+    }
+  },
+  "jwt": {
+    "audience": "82JHlNA3UOqJmlwzUQSciEOkscLzAya9",
+    "jwksHost": "https://erebus-thesis.auth0.com",
+    "issuer": "https://erebus-thesis.auth0.com/",
+    "jwksRequestsPerMinute": 60
+  },
+  "logger": {
+    "level": "info",
+    "dailyRotateFile": {
+      "filename": "logs/log-%DATE%.log",
+      "datePattern": "YYYY-MM-DD-HH",
+      "zippedArchive": true,
+      "maxSize": "20m",
+      "maxFiles": "14d"
+    }
+  }
+}
