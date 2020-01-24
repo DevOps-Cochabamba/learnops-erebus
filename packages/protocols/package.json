@@ -1,0 +1,22 @@
+{
+  "name": "erebus-protocols",
+  "version": "1.0.0",
+  "description": "Erebus Protocols",
+  "main": "lib/index.js",
+  "author": "Gary Ascuy <gary.ascuy@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "babel --watch --no-comments src --out-dir lib",
+    "test": "mocha --recursive --compilers js:babel-core/register",
+    "build": "babel --no-comments src --out-dir lib"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
