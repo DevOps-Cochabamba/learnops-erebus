@@ -1,2 +1,12 @@
 data/
 *.DS_Store
+
+# Server - Backend
+services/server/logs/
+services/server/build/
+services/server/node_modules/
+
+# Client - Frontend
+services/client/logs/
+services/client/build/
+services/client/node_modules/
