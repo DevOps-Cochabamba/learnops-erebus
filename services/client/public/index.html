@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=0, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/robotics.ico">
+    <link href="%PUBLIC_URL%/hopscotch/css/hopscotch.min.css" rel="stylesheet"></link>
+    <script src="%PUBLIC_URL%/hopscotch/js/hopscotch.min.js"></script>
+    <title>Erebus - Greek Mythology</title>
+    <style>
+      .lds-dual-ring-container {
+        padding: 100px;
+        text-align: center;
+      }
+      .lds-dual-ring {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+      }
+      .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 46px;
+        height: 46px;
+        margin: 1px;
+        border-radius: 50%;
+        border: 5px solid #000;
+        border-color: #000 transparent #000 transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+        opacity: 0.5;
+      }
+      @keyframes lds-dual-ring {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root">
+      <div class="lds-dual-ring-container">
+        <div class="lds-dual-ring"></div>
+      </div>
+    </div>
+  </body>
+</html>
