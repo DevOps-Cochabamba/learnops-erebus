@@ -1,0 +1,228 @@
+// wheeled-robot
+.simulator.single.page {
+  #heatmapContainerWrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  #heatmapContainer {
+    width: 100%;
+    height: 100%;
+  }
+
+  #robot-virtual {
+    position: fixed;
+    display: none;
+    left: 0px;
+    top: 0px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    padding: 2px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    .temperature {
+      position: absolute;
+      color: transparent;
+      top: 15px;
+      left: 12px;
+      border: 1px solid #ff0000a6;;
+      background: #e60b0b66;;
+      border-radius: 50%;
+      height: 6px;
+      width: 6px;
+    }
+    &.active {
+      background: #2185d0de;
+      border: 1px solid #000000;
+    }
+    &::before {
+      left: 10px;
+    }
+    &::after {
+      right: 10px;
+    }
+    &::before, &::after {
+      content: ".";
+      display: inline-block;
+      position: absolute;
+      color: transparent;
+      border: 1px solid #80808066;
+      background: #80808066;
+      border-radius: 50%;
+      height: 10px;
+      width: 10px;
+    }
+    &.left::before {
+      background: #ff0d0ddb !important;
+    }
+    &.right::after {
+      background: #ff0d0ddb !important;
+    }
+  }
+  .erebus.simulator {
+    .control.top {
+      z-index: 3;
+      position: fixed;
+      left: 0;
+      top: 0px;
+      width: 100%;
+      padding: 10px;
+      .show.more {
+        text-align: right;
+      }
+      #moreSimulatorButtons {
+        display: none;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 10px 0 0 0;
+        text-align: center;
+        border: 1px solid black;
+        .important {
+          margin-top: 10px;
+          padding: 5px 0;
+          background: rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+
+  }
+}
+
+// generic-console
+.simulator.single.page {
+  .erebus.simulator.generic-console {
+    &.black, &.dark {
+      background: black;
+      color: white;
+      #messages.messages {
+        background: none;
+      }
+    }
+    #messages.messages {
+      background: rgba(255, 255, 255, 0.7);
+      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      overflow: auto;
+      position: fixed;
+      z-index: 1;
+      font-family: monospace;
+      font-style: italic;
+      font-size: 18px;
+      margin: 0px 10px;
+      .content {
+        width: 96%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+// arm robot
+.simulator.single.page {
+  .erebus.simulator.arm-robot {
+    background-color: #3366cc85;
+
+    #robot-virtual {
+      width: 100%;
+      height: 100%;
+    }
+
+    .arm.all {
+      .base {
+        background-image: url("/assets/arm/base.png");
+
+        width: 394px;
+        height: 219px;
+
+        position: absolute;
+        left: 70px;
+        bottom: 0px;
+      }
+      .leg_a {
+        background-image: url("/assets/arm/leg_a.png");
+        width: 92px;
+        height: 235px;
+
+        transform: rotate(0deg);
+        transform-origin: 45px 200px;
+
+        position: absolute;
+        bottom: 140px;
+        left: 100px;
+      }
+      .leg_b {
+        background-image: url("/assets/arm/leg_b.png");
+        width: 317px;
+        height: 133px;
+
+        transform: rotate(0deg);
+        transform-origin: 65px 66px;
+
+        position: absolute;
+        bottom: 140px;
+        left: -22px;
+      }
+      .leg_c {
+        background-image: url("/assets/arm/leg_c.png");
+        width: 194px;
+        height: 79px;
+
+        transform: rotate(0deg);
+        transform-origin: 40px 40px;
+
+        position: absolute;
+        bottom: 35px;
+        left: 237px;
+      }
+      .hand {
+        background-image: url("/assets/arm/hand.png");
+        width: 78px;
+        height: 116px;
+
+        transform: rotate(0deg);
+        transform-origin: 38px 30px;
+
+        position: absolute;
+        bottom: -48px;
+        left: 125px;
+        &.close {
+          background-image: url("/assets/arm/hand_close.png");
+        }
+      }
+    }
+
+    // 2 Degrees of Freedom
+    div.arm.all.two {
+      .leg_b {
+        width: 0px;
+        left: 0px;
+      }
+      .leg_c {
+        width: 0px;
+        left: 0px;
+      }
+      .hand {
+        left: 6px;
+      }
+    }
+
+    // 3 Degrees of Freedom
+    div.arm.all.three {
+      .leg_c {
+        width: 0px;
+        left: 0px;
+      }
+      .hand {
+        left: 239px;
+      }
+    }
+  }
+}

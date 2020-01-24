@@ -1,0 +1,63 @@
+.erebus.cards {
+  &.ui.cards {
+    margin: 0 -0.5em;
+    margin-top: 10px;
+    .erebus.item.card {
+      .top.attached.buttons {
+        .ui.button {
+          position: absolute;
+          width: 40px;
+          border: 1px solid transparent;
+          display: inline-block;
+          box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+          &:hover {
+            border: 1px solid rgba(0, 0, 0, 0.3);
+          }
+        }
+        &.right.floated .ui.button {
+          width: 60px;
+          right: 0px;
+          border-radius: 0 .28571429rem 0 15px;
+          padding: 7px;
+        }
+        &.left.floated .ui.button {
+          border-radius: .28571429rem 0 15px 0;
+          padding: 3px;
+        }
+      }
+      .image {
+        padding: 10px 0px;
+      }
+      .robot.icon {
+        max-height: 100px;
+      }
+      .ui.bottom.buttons {
+        .ui.button {
+          border-top: 1px solid transparent;
+          border-bottom: 1px solid transparent;
+          box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+          &:hover {
+            border-top: 1px solid rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+      .control.button {
+        .icon {
+          margin: 0;
+        }
+      }
+      .play.button {
+        color: #21ba45;
+        .icon {
+          margin: 0;
+        }
+        &:hover {
+          .icon {
+            color: darken(#21ba45, 10%);
+          }
+        }
+      }
+    }
+  }
+}

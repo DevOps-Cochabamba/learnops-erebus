@@ -1,0 +1,45 @@
+#root {
+  .main.container {
+    display: flex;
+    .with.menu.header {
+      background: #2196f3;
+      width: 65px;
+      .menu {
+        background: transparent;
+        border-radius: 0;
+        border: 0px;
+        box-shadow: none;
+        .item {
+          min-width: 65px;
+          color: #ffffff;
+          opacity: 0.8;
+          border-radius: 0px;
+          padding: 15px 0;
+          &.exit {
+            position: absolute;
+            bottom: 0;
+          }
+          &:hover {
+            opacity: 1;
+            background: rgba(0,0,0,.3);
+          }
+          &.active {
+            background: #ffffff;
+            color: rgba(0, 0, 0, 0.7);
+            opacity: 1;
+            &:hover {
+              color: rgba(0, 0, 0, 1);
+            }
+          }
+        }
+      }
+    }
+    .main.content {
+      background: #ffffff;
+      flex: 1;
+      position: relative;
+      z-index: 10;
+      overflow: auto;
+    }
+  }
+}
