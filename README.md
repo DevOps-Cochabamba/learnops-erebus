@@ -8,6 +8,20 @@
 $ docker-compose up -d db mq
 ```
 
+#### NPM Dependencies
+
+```sh
+$ cd packages/protocols
+$ npm install
+$ npm run build
+```
+
+```sh
+$ cd packages/sdk
+$ npm install
+$ npm run build
+```
+
 #### Backend (GraphQL API)
 ```sh
 $ cd services/client
