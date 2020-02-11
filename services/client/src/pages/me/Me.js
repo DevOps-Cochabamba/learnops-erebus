@@ -35,12 +35,12 @@ const Me = ({ t, i18n }) => (
         </div>
         <div className='field'>
           <label>{t('pages.me.fields.year')}</label>
-          <input value='2018' readOnly={true}/>
+          <input value='2020' readOnly={true}/>
         </div>
       </div>
       <h4 className='ui dividing header'>{t('pages.me.about')}</h4>
       <Link className={'ui blue button item'} to='/about'><i className='bug icon'></i>{t('app.name')}</Link>
-      
+
     </form>
   </div>
 )
