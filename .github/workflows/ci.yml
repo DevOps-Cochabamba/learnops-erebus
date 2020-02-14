@@ -24,7 +24,7 @@ jobs:
     - run: cd services/server && npm install
     #- run: cd services/server && npm run build --if-present
     #- run: npm start
-    - run: npm test
+    #- run: npm test
       env:
         CI: true
     - name: Docker Publish
