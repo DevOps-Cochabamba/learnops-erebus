@@ -27,11 +27,15 @@ jobs:
     #- run: npm test
       env:
         CI: true
+    #- run: cd services/server
+    - name: Checkout
+      uses: actions/checkout@v1
+    - run: cd services/server   
     - name: Docker Publish
       uses: manusa/actions-publish-docker@v1.0.1
       with:
         # Name of the Docker image
-        name: erebus
+        name: vivisima/erebus
         # Tag for the Docker image
         #tag: # optional
         # Script body to compute tag name for the Docker image, has context as the main function argument
