@@ -2,49 +2,53 @@ name: Continuous Integration
 
 on: [push]
 
+env:
+  IMAGE_TAG: latest
+
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: cd packages/protocols && npm install
-    - run: cd packages/sdk && npm install
-    - run: cd services/client && npm install
-    #- run: npm start
-    - run: cd services/server && npm install
-    #- run: cd services/server && npm run build --if-present
-    #- run: npm start
-    #- run: npm test
-      env:
-        CI: true
-    #- run: cd services/server
-    - name: Checkout
-      uses: actions/checkout@v1
-    - run: cp services/server/Dockerfile .
-    - name: Docker Publish
-      uses: manusa/actions-publish-docker@v1.0.1
-      with:
-        # Name of the Docker image
-        name: vivisima/erebus
-        # Tag for the Docker image
-        tag: 1520
-        # Script body to compute tag name for the Docker image, has context as the main function argument
-        #tag script: # optional
-        # Username for Docker registry
-        username: vivisima
-        # Password for Docker registry
-        password: nigiBox02
-        # Registry URL
-        #registry: # optional
-        # Don't skip pull requests
-        #include pull requests: # optional
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build protocols
+        run: |
+          cd packages/protocols
+          npm install
+          npm run build
+
+      - name: Build SDK
+        run: |
+          cd packages/sdk
+          npm install
+          npm run build
+      
+      - name: Build Client
+        run: |
+          cd services/client
+          npm install
+          npm run build
+
+          # Build the container image
+          docker build . --file Dockerfile --tag client:$IMAGE_TAG
+
+      - name: Build Server
+        run: |
+          cd services/server
+          npm install
+          npm run build
+          docker build . --file Dockerfile --tag server:$IMAGE_TAG
+
+      - name: Login to GitHub Docker Registry
+        run: docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+      - name: Push container images
+        run: |
+          docker tag client:$IMAGE_TAG docker.pkg.github.com/${{ github.repository }}/client:$IMAGE_TAG
+          docker tag server:$IMAGE_TAG docker.pkg.github.com/${{ github.repository }}/server:$IMAGE_TAG
+
+          docker push docker.pkg.github.com/${{ github.repository }}/client:$IMAGE_TAG
+          docker push docker.pkg.github.com/${{ github.repository }}/server:$IMAGE_TAG
