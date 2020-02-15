@@ -32,7 +32,7 @@ jobs:
           npm install
           npm run build
 
-          # Build the container image
+          # Build the container image THIS COMMENT WAS UPDATED BY VIVI
           docker build . --file Dockerfile --tag client:$IMAGE_TAG
 
       - name: Build Server
