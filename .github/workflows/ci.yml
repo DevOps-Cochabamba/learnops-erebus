@@ -48,7 +48,7 @@ jobs:
       - name: Push container images
         run: |
           docker tag client:$IMAGE_TAG docker.pkg.github.com/devops-cochabamba/learnops-erebus/client:$IMAGE_TAG
-          docker tag server:$IMAGE_TAG docker.pkg.github.com/${{ github.repository }}/server:$IMAGE_TAG
+          docker tag server:$IMAGE_TAG docker.pkg.github.com/devops-cochabamba/learnops-erebus/server:$IMAGE_TAG
 
-          docker push docker.pkg.github.com/${{ github.repository }}/client:$IMAGE_TAG
-          docker push docker.pkg.github.com/${{ github.repository }}/server:$IMAGE_TAG
+          docker push docker.pkg.github.com/devops-cochabamba/learnops-erebus/client:$IMAGE_TAG
+          docker push docker.pkg.github.com/devops-cochabamba/learnops-erebus/server:$IMAGE_TAG
