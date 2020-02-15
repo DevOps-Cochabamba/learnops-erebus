@@ -8,9 +8,11 @@ export async function robot(root, { _id }, { user }) {
 }
 
 export async function allRobots(root, { source }, { user }) {
+  logger.info('Retrieving data all robtos.')
   const userId = source === 'robot' ? { $exists: false } : user.sub
-
+  logger.info('User:', userId)
   const query = source ? { source, userId} : { userId }
+  logger.debug('Query:', query)
   return Robot.find(query)
 }
 

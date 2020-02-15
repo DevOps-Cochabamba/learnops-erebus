@@ -40,7 +40,7 @@ const actions = {
     const token = localStorage.getItem('x-erebus-token')
     const { data: { createControlToken: key }} = await createControlToken({ variables: { token, ref } })
 
-    const baseUrl = process.env.PUBLIC_URL || 'http://192.168.0.10:2666'
+    const baseUrl = process.env.PUBLIC_URL || 'http://stage.ffactory.io:2666'
     qrcode.current.setState({url: `${baseUrl}/s/${key}`})
     $(`.qrcode.${id}`).slideDown()
   },
