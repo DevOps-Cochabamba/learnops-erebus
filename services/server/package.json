@@ -28,7 +28,7 @@
     "koa-passport": "^4.1.1",
     "koa-router": "^7.4.0",
     "koa-session": "^5.9.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "meteor-random": "^0.0.3",
     "mongoose": "^5.3.1",
     "winston": "^3.1.0",
